@@ -20,7 +20,7 @@ export async function fetchNeighbourhoodMeta(zipCode) {
 
     const urlParametersString = getParametersString(parameters);
 
-    const response = await nodeFetch(`https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?${urlParametersString}`);
+    const response = await nodeFetch(`https://api.pdok.nl/bzk/locatieserver/search/v3_1/free?${urlParametersString}`);
 
     const responseJson = await response.json();
 
