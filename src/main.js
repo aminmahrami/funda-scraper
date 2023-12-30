@@ -13,12 +13,9 @@ const pastResults = new Set(JSON.parse(data) || []);
 console.log('pastResults:', pastResults);
 const newResults = new Set();
 const houses = [];
-const { CHAT_ID, BOT_API } = process.env;
+const { CHAT_ID, BOT_API, SEARCH_URLS } = process.env;
 
-const urls = [
-    'https://www.funda.nl/en/koop/amsterdam/beschikbaar/0-300000/40+woonopp/2+slaapkamers/1-dag/',
-    'https://www.funda.nl/en/koop/haarlem/beschikbaar/0-300000/40+woonopp/2+slaapkamers/1-dag/',
-];
+const urls = JSON.parse(SEARCH_URLS)
 
 const runTask = async () => {
     for (const url of urls) {
