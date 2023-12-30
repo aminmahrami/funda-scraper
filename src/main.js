@@ -18,6 +18,11 @@ const { CHAT_ID, BOT_API, SEARCH_URLS } = process.env;
 const urls = JSON.parse(SEARCH_URLS)
 
 const runTask = async () => {
+    console.log('URLS', urls)
+    if(!urls || urls.length === 0) {
+        console.log('No search urls found!');
+        return;
+    }
     for (const url of urls) {
         await runPuppeteer(url);
     }
