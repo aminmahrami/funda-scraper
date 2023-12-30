@@ -13,9 +13,9 @@ const pastResults = new Set(JSON.parse(data) || []);
 console.log('pastResults:', pastResults);
 const newResults = new Set();
 const houses = [];
-const { CHAT_ID, BOT_API, SEARCH_URLS } = process.env;
+const { CHAT_ID, BOT_API } = process.env;
 
-const urls = JSON.parse(SEARCH_URLS)
+const urls = ['https://www.funda.nl/zoeken/koop/?price=%22350000-650000%22&sort=%22date_down%22&selected_area=%5B%22utrecht%22,%22utrecht%2Fleidsche-rijn-centrum%22,%22vleuten%22%5D&floor_area=%2275-%22&object_type=%5B%22house%22,%22apartment%22%5D&availability=%5B%22available%22%5D&energy_label=%5B%22A%22,%22B%22,%22C%22,%22A%2B%22,%22A%2B%2B%22,%22A%2B%2B%2B%22,%22A%2B%2B%2B%2B%22,%22A%2B%2B%2B%2B%2B%22,%22D%22%5D']
 
 const runTask = async () => {
     console.log('URLS', urls)
