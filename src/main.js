@@ -116,10 +116,10 @@ const runPuppeteer = async (url) => {
 
 
     console.log('parsing funda.nl data');
-    const result = dom.window.document.querySelectorAll('.search-result');
+    const result = dom.window.document.querySelectorAll(`div[data-test-id="search-result-item"]`);
     for (const element of result) {
         const urlPath = element?.querySelectorAll('a')?.[0]?.href;
-        const headerSubtitle = element?.querySelector('.search-result__header-subtitle');
+        const headerSubtitle = element?.querySelector(`div[data-test-id="postal-code-city"]`);
         const subtitleText = headerSubtitle?.innerHTML?.trim();
 
         let path = urlPath;
